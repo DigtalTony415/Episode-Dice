@@ -1,0 +1,80 @@
+/*
+   DicePanel.java
+   
+        This file is the GUI construct file, or panel file.  It contains instructions for the panel dimensions and 
+        characteristics.  It also calls the Die() object, which is the last file in this program.
+**/
+
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.io.*;
+
+
+   public class DicePanel extends JPanel
+{
+    private JTextField choice;
+    private JButton runIt;
+    private JPanel north, south, east, west, center;
+    private JLabel header1, header2, picImg;
+    
+
+   public DicePanel()
+   {
+      Die die1, die2;
+      int sum;
+
+      die1 = new Die(7);
+      die2 = new Die(26);
+       die1.roll();
+        die2.roll();
+
+    
+     header1 = new JLabel ("Click button to choose a random");
+     header2 = new JLabel ("Star Trek the Next Generation episode");
+ 
+     header1.setForeground(Color.yellow);
+     header2.setForeground(Color.yellow);
+   
+     ImageIcon icon = new ImageIcon ("images2.jpg");
+     
+     picImg = new JLabel (icon);
+     
+
+     runIt = new JButton ("Choose Episode");
+     runIt.addActionListener (new ButtonListener());
+
+     choice = new JTextField (14);
+     
+     add(header1);
+     add(header2);
+     
+     add(runIt);
+     add(picImg);
+     add(choice);
+    
+     setBackground (Color.black);
+     setPreferredSize (new Dimension(330, 330));
+    }
+
+/* 
+--------Button Listener-------------
+**/
+
+    private class ButtonListener implements ActionListener
+    {
+       public void actionPerformed (ActionEvent event)
+       {
+        Die die1, die2;
+        die1 = new Die(7);
+        die2 = new Die(26);
+
+        die1.roll();
+        die2.roll();
+        choice.setText ("    Season:" +die1+ ", Epsiode: " +die2 );
+       }
+    }
+
+
+}
