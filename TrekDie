@@ -1,0 +1,49 @@
+public class TrekDie {
+
+
+ public static void main(String[] args)
+
+ {
+
+        Die sDie = new Die(7);
+        Die eDie = new Die(26);  
+
+        sDie.roll();
+        eDie.roll();
+
+
+        System.out.println(" die roll completed. \n\n your Star Trek episode is: \n" + "\n Season:  " +sDie+ " ,       Episode:  " +eDie+ "\n\n\n ");
+
+ }
+
+  public static class Die
+  {
+
+        private int MAX;
+        private int faceValue;
+        public Die(int dieSides)
+
+        {
+             MAX = dieSides;
+             faceValue = 1;
+        }
+
+        public int roll()
+        {
+            faceValue = (int)(Math.random() * MAX) + 1;
+            
+            return faceValue;
+        }
+        
+      public String toString()
+      {
+            String result = Integer.toString(faceValue);
+
+            return result;
+      }
+
+      
+
+ }
+
+}
