@@ -1,0 +1,33 @@
+/*
+  EpisodeDice.java
+ 
+      This is program randomly selects a Star Trek the Next Generation episode.  This is the driver file
+      which calls a panel file containing GUI instructions and object logic.
+
+@author Anthony Snowden
+ @version 1.0
+ @since 2017-08-07
+**/
+
+import javax.swing.*;
+
+
+    public class EpisodeDice
+   {
+   
+   
+    public static void main (String[] args)
+    {
+
+        JFrame frame = new JFrame ("Episode Selector");
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+
+        frame.getContentPane().add(new DicePanel());
+        frame.pack();
+        //frame.setLocationRelativeTo(center);
+        frame.setLocation(540, 320);
+        frame.setVisible(true);
+        
+    }
+    
+}
