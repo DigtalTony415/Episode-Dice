@@ -72,7 +72,7 @@ import java.io.*;
 
         die1.roll();
         die2.roll();
-        choice.setText ("    Season:" +die1+ ", Epsiode: " +die2 );
+        choice.setText ("    Season: " +die1+ ", Epsiode: " +die2 );
        }
     }
 
