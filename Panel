@@ -55,7 +55,7 @@ import java.io.*;
      add(choice);
     
      setBackground (Color.black);
-     setPreferredSize (new Dimension(330, 330));
+     setPreferredSize (new Dimension(280, 330));
     }
 
 /* 
